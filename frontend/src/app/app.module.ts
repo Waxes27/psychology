@@ -11,8 +11,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +18,6 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     DashboardComponent,
     SignInComponent,
     SignUpComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
