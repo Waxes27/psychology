@@ -1,4 +1,4 @@
-package com.waxes27.psycho.user.models.enums;
+package com.waxes27.psycho.profile.models.enums;
 
 public enum CommunicationMethods {
     TEXT,

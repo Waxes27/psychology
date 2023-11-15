@@ -1,5 +1,7 @@
 package com.waxes27.psycho.user.services;
 
+import com.waxes27.psycho.profile.models.Profile;
+import com.waxes27.psycho.profile.repository.ProfileRepository;
 import com.waxes27.psycho.user.models.User;
 import com.waxes27.psycho.user.repository.UserRepository;
 import com.waxes27.psycho.user.security.PasswordEncoder;
@@ -16,6 +18,7 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private final ProfileRepository profileRepository;
 
 
     @Override
@@ -28,7 +31,13 @@ public class UserService implements UserDetailsService {
         user.setPassword(new PasswordEncoder().bCryptPasswordEncoder().encode(user.getPassword()));
         if (userRepository.findByUsername(user.getUsername()).isPresent()){
             throw new IllegalAccessException("User already Registered");
-        };
+        }
+        else{
+            Profile profile = new Profile(user);
+            user.setProfile(profile);
+            profileRepository.save(profile);
+        }
+
         return userRepository.save(user);
     }
 

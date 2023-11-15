@@ -1,10 +1,8 @@
 package com.waxes27.psycho.user.models;
 
+import com.waxes27.psycho.profile.models.Profile;
 import com.waxes27.psycho.user.models.enums.Role;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +17,7 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +28,9 @@ public class User implements UserDetails {
     @Enumerated
     @Column(nullable = false)
     private Role role;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Profile profile;
 
     public User(String username, String password, Role role) {
         this.username = username;

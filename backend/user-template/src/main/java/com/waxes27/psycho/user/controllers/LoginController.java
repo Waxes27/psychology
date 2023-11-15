@@ -1,6 +1,7 @@
 package com.waxes27.psycho.user.controllers;
 
 
+import com.waxes27.psycho.profile.models.Profile;
 import com.waxes27.psycho.user.models.User;
 import com.waxes27.psycho.user.models.enums.Role;
 import com.waxes27.psycho.user.requests.UserRegistrationRequest;
@@ -60,6 +61,7 @@ LoginController {
         );
 
         user = userService.createNewUser(user);
+        System.out.println(user.getProfile().getUser().getId());
 
         return user;
     }
