@@ -25,10 +25,17 @@ public class ProfileService {
     }
 
     public Profile updateProfile(Profile profile, UUID userId){
-        User user = userRepository.findById(userId).get();
-        profile.setUser(user);
-        user.setProfile(profile);
-        userRepository.updateProfileById(profile,userId);
-        return profile;
+        Profile profileFromRepo = profileRepository.findByUser_Id(userId).orElseThrow(IllegalStateException::new);
+        profileFromRepo.setName(profile.getName());
+        profileFromRepo.setAge(profile.getAge());
+        profileFromRepo.setLocation(profile.getLocation());
+        profileFromRepo.setLanguagePreferences(profile.getLanguagePreferences());
+        profileFromRepo.setEmotion(profile.getEmotion());
+        profileFromRepo.setCurrentChallenges(profile.getCurrentChallenges());
+        profileFromRepo.setPreferredCommunicationMethods(profile.getPreferredCommunicationMethods());
+
+
+        System.out.println(profile);
+        return profileRepository.save(profileFromRepo);
     }
 }

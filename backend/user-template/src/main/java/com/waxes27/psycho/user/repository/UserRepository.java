@@ -11,10 +11,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
-    @Transactional
-    @Modifying
-    @Query("update User u set u.profile = ?1 where u.id = ?2")
-    int updateProfileById(Profile profile, UUID id);
     Optional<User> findByUsername(String username);
 
     @Override
