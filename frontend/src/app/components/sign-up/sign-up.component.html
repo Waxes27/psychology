@@ -1,1 +1,24 @@
-<p>sign-up works!</p>
+<div class="main">
+
+    <div class="enclosure">
+        <div class="header">
+            <h1>Register</h1>
+        </div>
+        <br>
+        <div class="middle">
+            <!-- <img src={{image}} height="100" width="100" alt="" srcset=""> -->
+        </div>
+        <br>
+        
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <p class="status">{{message}}</p>
+            <input type="text" id="username" formControlName="username" placeholder="Username">
+            <br>
+            <input type="password" id="password" formControlName="password" placeholder="Password" >
+            <br>
+            <button type="submit" [disabled]="myForm.invalid">Register</button>
+            <a routerLink="/sign-in">Already have an account. Sign in</a>
+          </form>
+    </div>
+
+</div>

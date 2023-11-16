@@ -1,0 +1,58 @@
+.main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main .enclosure {
+  width: 50%;
+  height: 100%;
+}
+
+.main .enclosure .header {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.main .enclosure .middle {
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.main .enclosure .middle img {
+  border-radius: 40%;
+}
+
+.main .enclosure form {
+  background-color: rgba(107, 106, 106, 0.068);
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main .enclosure form .status {
+  margin: 5% auto;
+  color: red;
+}
+
+.main .enclosure form input {
+  margin: 15%;
+  padding: 1%;
+  width: 50%;
+  margin: auto;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.247);
+}
+
+.main .enclosure form button {
+  margin: 10% auto;
+  padding: 2% 0%;
+  width: 50%;
+  background-color: greenyellow;
+  border: none;
+  font-size: larger;
+}
