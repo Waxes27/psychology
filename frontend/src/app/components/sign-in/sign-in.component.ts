@@ -36,7 +36,7 @@ export class SignInComponent {
       this.auth.postLoginData(this.myForm.value).subscribe(
         (response) => {
         console.log(response)
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard'] ,{queryParams : { uuid: response["id"] }});
       },(error) => {
         this.message ="Username or password incorrect"
       })

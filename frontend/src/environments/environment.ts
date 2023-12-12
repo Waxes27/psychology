@@ -1,6 +1,6 @@
 export const environment = {
     production: false,
-    firebase: {
+    firebase : {
         apiKey: "AIzaSyBgSBn83KJVpgbySkP5hD5SwqpzYBMLo8A",
         authDomain: "psychology-33cb7.firebaseapp.com",
         databaseURL: "https://psychology-33cb7-default-rtdb.europe-west1.firebasedatabase.app",

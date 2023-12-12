@@ -34,10 +34,10 @@ export class SignUpComponent {
 
       this.auth.postRegistrationData(this.myForm.value).subscribe(
         (response) => {
-        console.log(response)
-        this.router.navigate(['/dashboard']);
+        console.log(response["id"])
+        this.router.navigate(['/profile'], {queryParams : { uuid: response["id"] }});
       },(error) => {
-        this.message = "User already registered "
+        this.message = "Error creating new user"
       })
 
     }

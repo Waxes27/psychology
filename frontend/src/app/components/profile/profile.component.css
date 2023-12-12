@@ -1,0 +1,64 @@
+.main {
+  background-color: rgba(0, 0, 0, 0.021);
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.main .profile {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  height: 80%;
+  margin: auto;
+}
+
+.main .profile .preview {
+  background-color: white;
+  margin: 0 5%;
+  text-align: center;
+  width: 50%;
+  height: 70%;
+}
+
+.main .profile .edit {
+  background-color: white;
+  width: 100%;
+}
+
+.main .profile .edit h2 {
+  margin-left: 4%;
+}
+
+.main .profile .edit form {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0;
+  width: 100%;
+}
+
+.main .profile .edit form .row-one {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.main .profile .edit form input {
+  display: table-cell;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+  padding: 30px;
+}
+
+.main .profile .edit form button {
+  border: none;
+  background-color: rgba(3, 148, 3, 0.377);
+  border-radius: 20px;
+  margin: auto;
+  width: 30%;
+  padding: 1%;
+  color: white;
+}

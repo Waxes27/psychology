@@ -13,6 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     DashboardComponent,
     SignInComponent,
     SignUpComponent,
+    ProfileComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -30,6 +34,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     AngularFireDatabaseModule,
     BrowserModule,
     HttpClientModule,
+    MatCardModule,
     AppRoutingModule
   ],
   providers: [],

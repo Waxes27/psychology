@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="profile">
+
+        <div class="preview">
+            <div>
+                <h2>{{profile.name}}</h2>
+                <div class="information">
+                    <p>
+                        Location: {{profile.location}}
+                    </p>
+                    <p>
+                        Age: {{profile.age}}
+                    </p>
+                    <p>
+                        Emotion: {{profile.emotion}}
+                    </p>
+                    <p>
+                        Challenges: {{profile.currentChallenges}}
+                    </p>
+    
+                </div>
+            </div>
+    
+        </div>
+        <div class="edit">
+            <h2>Edit Profile</h2>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="row-one">
+                    <input type="text" id="name" formControlName="name" placeholder="Name: {{profile.name}}">
+                    <input type="text" id="age" formControlName="age" placeholder="Age: {{profile.age}}" >
+                </div>
+                <div class="row-one">
+                    <input type="text" id="location" formControlName="location" placeholder="Location: {{profile.location}}">
+                    <input type="text" id="languagePreferences" formControlName="languagePreferences" placeholder="language preferences: {{profile.languagePreferences}}" >
+                    
+                </div>
+                <div class="row-one">
+                    <input type="text" id="emotion" formControlName="emotion" placeholder="Emotion: {{profile.emotion}}">
+                    <input type="textarea" id="currentChallenges" formControlName="currentChallenges" placeholder="Current Challenges: {{profile.currentChallenges}}" >
+                </div>
+                
+                
+                
+                <button type="submit" [disabled]="myForm.invalid" [style]="colorChanger()" >Submit</button>
+              </form>
+        </div>
+    </div>
+
+</div>

@@ -20,4 +20,8 @@ export class HttpAuthService {
   postRegistrationData(data: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, data);
   }
+
+  getUserData(uuid: any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/profile?user=${uuid}`);
+  }
 }
